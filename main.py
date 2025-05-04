@@ -23,13 +23,13 @@ async def main():
 
     # Register all handlers
     setup_dialogs(dp)
-    setup_handlers(dp)
+    setup_handlers(dp=dp)
 
     logger.info('starting bot pooling')
     tg_pooling = dp.start_polling(tg_bot)
 
     logger.info('starting licening')
-    worker = MessageQueueWorker()
+    worker = MessageQueueWorker(redis=redis_client, tg_bot=tg_bot)
     tg_responser = worker.process_queue()
 
     await asyncio.gather(

@@ -18,6 +18,9 @@ class Settings(BaseSettings):
     REDIS_PASSWORD: SecretStr = 'your_strong_password'
     REDIS_DATABASE: int = 0
 
+    REDIS_ANSWER_QUEUE: str = 'to_answer_message'
+    REDIS_SENT_QUEUE: str = 'sent_message'
+
     TELEGRAM_BOT_TOKEN: SecretStr = ''
 
     class Config:
