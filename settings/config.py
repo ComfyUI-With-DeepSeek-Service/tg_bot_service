@@ -9,6 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 class Settings(BaseSettings):
     DEV: bool = False
 
+    BACKEND_SERVICE_HOST: str = 'backend'
+    BACKEND_SERVICE_PORT: int = 8000
+
     REDIS_HOST: str = 'redis'
     REDIS_PORT: int = 6379
     REDIS_USER: str = 'default'
