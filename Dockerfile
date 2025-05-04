@@ -37,4 +37,4 @@ COPY . .
 #CMD [poetry run uvicorn "main:app" --host "0.0.0.0" --port 8000]
 #ls -al .venv/lib/python3.12/site-packages
 
-ENTRYPOINT ["poetry", "run", "main"]
+ENTRYPOINT ["poetry", "run", "python", "main.py"]
