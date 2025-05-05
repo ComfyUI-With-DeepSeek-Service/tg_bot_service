@@ -57,7 +57,7 @@ class MessageQueueWorker:
         return False
 
     async def process_queue(self) -> None:
-        """Continuously process messages from queue"""
+        """Проверка очередей на наличие сообщений, на которые надо ответить/обновить ответ"""
         logger.info('Starting listening')
 
         while True:
