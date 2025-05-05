@@ -4,7 +4,7 @@ import logging
 from aiogram import Dispatcher
 from aiogram.fsm.storage.base import DefaultKeyBuilder
 from aiogram.fsm.storage.redis import RedisStorage
-from aiogram_dialog.setup import setup_dialogs
+# from aiogram_dialog.setup import setup_dialogs
 from loguru import logger
 
 from receiver.app import setup_handlers
@@ -22,7 +22,7 @@ async def main():
     dp = Dispatcher(storage=storage)
 
     # Register all handlers
-    setup_dialogs(dp)
+    # setup_dialogs(dp)
     setup_handlers(dp=dp)
 
     logger.info('starting bot pooling')

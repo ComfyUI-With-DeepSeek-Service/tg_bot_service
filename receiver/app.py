@@ -1,7 +1,7 @@
 import aiohttp
 from aiogram import Dispatcher
 from aiogram.types import Message
-from aiogram_dialog import DialogManager
+# from aiogram_dialog import DialogManager
 from loguru import logger
 
 from settings.config import settings
@@ -10,7 +10,8 @@ from settings.config import settings
 def setup_handlers(dp: Dispatcher):
 
     @dp.message()
-    async def start(message: Message, dialog_manager: DialogManager):
+    async def start(message: Message):
+    # async def start(message: Message, dialog_manager: DialogManager):
         logger.info(f'Got message: {message.text}')
 
         request_data = {

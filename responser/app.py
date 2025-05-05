@@ -40,7 +40,7 @@ class MessageQueueWorker:
 
             # Move to sent queue
             await self.redis.hset(self.sent_queue, message_key, message_value)
-            await self.redis.hdel(self.to_send_queue, message_key)
+            await self.redis.hdel(self.to_send_queue, message_key)  # TODO set TTL
 
             logger.info(
                 f'Successfully processed message to chat {chat_id}, message {message_id}, content: {text}'
